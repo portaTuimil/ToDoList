@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Task Manager</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="main.js" defer></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script src="https://kit.fontawesome.com/91d8a6706f.js" crossorigin="anonymous"></script>
+	<link rel="icon" type="image/x-icon" href="./assets/icons8-libro-de-copiar-96.png">
 </head>
 <body>
+<div class="modal" id="close">
+	<div class="modal-content">
+		<form class="form">
 
+			<div id="title">
+				<input type="text" id="title" name="title" class ="title"placeholder="Book Title...">
+			</div>
+
+			<div id="description">
+				<textarea type="text" id="description" class="description" name="description" placeholder="Description..."></textarea>
+			</div>
+
+			<div id="date">
+				<input type="date" id="date" class="date" name="date">
+			</div>
+
+			<div id="submit">
+				<button class="submit" id= "submit" type ="submit">Submit</button>
+			</div>
+
+		</form>
+	</div>
+</div>
+<div class="nav">
+	<p class="banner-nav"><i class="fa-solid fa-check-double"></i> Task Manager</p>
+	<button class="modal-generator">Add Task</button>
+</div> 
+<div class="lateral-panel">
+	<div class="other-actions"><i class="fa-solid fa-trash-can fa-3x"></i></div>
+</div>
+<div class="content"></div></div>
 
 	
 </body>
