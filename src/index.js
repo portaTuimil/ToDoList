@@ -34,8 +34,12 @@ function createTasks(){
             }});
 
             let descp = document.createElement('p');
-            descp.innerText = task.description;
-            modalDesc.appendChild(descp)
+            let h4title = document.createElement('h4');
+            modalDesc.innerText = '';
+            h4title.innerText = 'Description:';
+            descp.innerText = taskList[i].description;
+            modalDesc.appendChild(h4title);
+            modalDesc.appendChild(descp);
         })  
 
         //Erase
@@ -48,11 +52,10 @@ function createTasks(){
         eraseBtn.addEventListener('click', ()=>{
             taskList.splice(taskList.indexOf(task),1);
             createTasks();
-            storeData();
+            storeData();            
         })  
         
         content.appendChild(div);
-        console.log(task);  
     }
 }
 
@@ -93,8 +96,7 @@ function storeData(){
         localStorage.setItem('list', JSON.stringify(taskList))
     }
     storedNames = JSON.parse(localStorage.getItem('list'));
-    console.log(storedNames)
-    console.log(taskList)
+
 }
 
 //Data Obtention:

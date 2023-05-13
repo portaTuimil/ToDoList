@@ -205,13 +205,14 @@
     height: 600px;
     width: 700px;
     border-radius: 20px; 
+
 }
 
 .modal-desc > p{
     font-size: 1.5rem;
 }
 
-.desciptionName{
+.modal-desc > h4{
     font-size: 2rem;
     margin-bottom: 20px;
 }
