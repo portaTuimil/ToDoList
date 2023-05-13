@@ -3,7 +3,9 @@ let content = document.querySelector('.content')
 
 function createTasks(){
     content.textContent = '';
-    for(let task of taskList){
+    taskList = taskList.filter(t => t.title!=='');
+    for(let i = 0; i< taskList.length; i++){
+        task = taskList[i];
         let div = document.createElement('div');
         div.classList.add('task');
         
@@ -11,19 +13,46 @@ function createTasks(){
         let hTitle = document.createElement('h1');
         hTitle.innerText = task.title;
         div.appendChild(hTitle);
-
-        //Description
-        let pDescription = document.createElement('p');
-        pDescription.innerText = task.description;
-        div.appendChild(pDescription);
-
         //Date
         let h2Date = document.createElement('h2');
         h2Date.innerText = task.day;
         div.appendChild(h2Date);
+
+        //Description
+        let descBtn = document.createElement('div');
+        descBtn.innerText = 'Read Description';
+        div.appendChild(descBtn);
+        descBtn.addEventListener('click', ()=>{
+            let Desc =document.querySelector('.desc');
+            let modalDesc = document.querySelector('.modal-desc');
+            Desc.style.display = "block";
+
+            Desc.addEventListener('click', (e)=>{
+                if(e.target.id !== 'close'){
+                    Desc.style.display = "none";
+                
+            }});
+
+            let descp = document.createElement('p');
+            descp.innerText = task.description;
+            modalDesc.appendChild(descp)
+        })  
+
+        //Erase
+        let eraseBtn = document.createElement('section');
+        eraseBtn.classList.add(`erase`)
+        eraseBtn.setAttribute("id", `erase${i}`)
+        eraseBtn.innerHTML =  `<i class="fa-solid fa-trash-can fa-2x" id="erase${i}"></i>`;
+        div.appendChild(eraseBtn);    
+
+        eraseBtn.addEventListener('click', ()=>{
+            taskList.splice(taskList.indexOf(task),1);
+            createTasks();
+            storeData();
+        })  
         
         content.appendChild(div);
-        console.log(task);    
+        console.log(task);  
     }
 }
 

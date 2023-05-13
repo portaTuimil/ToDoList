@@ -42,6 +42,7 @@
     width: 300px;
     color: white;
     background-color: #334756;
+    cursor:pointer;
 }
 
 .modal-generator:hover{
@@ -107,6 +108,7 @@
     width: 100%;
     height: 100%;
     font-size: 1.5rem;
+    cursor:pointer;
 }
 
 #date{
@@ -151,21 +153,65 @@
     border-radius: 15px;
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 4fr 2fr 2fr 1fr;
 }
 
 .task > h1{
-    text-align: center;
-    font-size: 2rem;
-}
-
-.task > p{
-    text-align: center;
+    padding-left: 15px;
     font-size: 2rem;
 }
 
 .task > h2{
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
+.task > div{
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #757a79; 
+    border-radius: 8px;
+    opacity: 0.5;
+    cursor:pointer;
+}
+
+.task > div:hover{
+    opacity: 0.4;
+}
+
+.task > section{
+    text-align: center;
+}
+
+.desc {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-desc {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    height: 600px;
+    width: 700px;
+    border-radius: 20px; 
+}
+
+.modal-desc > p{
+    font-size: 1.5rem;
+}
+
+.desciptionName{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
