@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Carlito', sans-serif;
-
 }
 
 .nav{
@@ -29,7 +28,7 @@
     position: fixed;
     top: 12vh;
     height: 88vh;
-    width: 28vw;
+    width: 5vw;
     background-color: #666666;
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -62,6 +61,7 @@
     width: 100%; 
     height: 100%; 
     overflow: auto; 
+    padding-top: 10vh;
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
 }
@@ -128,6 +128,7 @@
     display:grid;
     grid-template-rows: repeat(8, 1fr);
     background-color: #444444;
+    min-width: 60px;
 }
 
 .fa-trash-can{
@@ -141,11 +142,10 @@
 
 .content{
     margin-top: 12vh;
-    margin-left: 28vw;
     min-height: 88vh;
-    max-width: 72vw;
     background-color: #bbbbbb;
     padding: 5%;
+    padding-left: 100px;
     box-sizing: border-box;
 }
 
@@ -200,6 +200,7 @@
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
+    padding-top: 10vh;
 }
 
 .modal-desc {
@@ -221,3 +222,24 @@
     margin-bottom: 20px;
 }
 
+@media(max-width: 850px){
+    .banner-nav{
+        font-size: 2rem;
+    }
+
+    .modal-generator{
+       margin-left: 10%;
+       font-size: 1.5rem;
+    }
+}
+
+@media(max-width: 850px){
+    .banner-nav{
+        font-size: 2rem;
+    }
+
+    .modal-generator{
+       margin-left: 10%;
+       font-size: 1.5rem;
+    }
+}

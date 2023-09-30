@@ -49,10 +49,10 @@ function createTasks(){
         eraseBtn.innerHTML =  `<i class="fa-solid fa-trash-can fa-2x" id="erase${i}"></i>`;
         div.appendChild(eraseBtn);    
 
-        eraseBtn.addEventListener('click', ()=>{
-            taskList.splice(taskList.indexOf(task),1);
-            createTasks();
-            storeData();            
+        eraseBtn.addEventListener('click', (e)=>{
+            taskList.splice(e.target.id[5],1);
+            localStorage.setItem('list_ToDoList_TheOdinProject', JSON.stringify(taskList));  
+            createTasks(); 
         })  
         
         content.appendChild(div);
