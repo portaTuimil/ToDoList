@@ -80,7 +80,7 @@ let Description = document.querySelector('.description')
 let Day = document.querySelector('.date')
 let taskList;
 
-let storedNames = JSON.parse(localStorage.getItem('list'));
+let storedNames = JSON.parse(localStorage.getItem('list_ToDoList_TheOdinProject'));
 taskList = storedNames || []   //Check for null
 createTasks()
 
@@ -93,9 +93,9 @@ function taskFactory(title, description, day){
 function storeData(){
     taskList.push(new taskFactory(Title.value, Description.value, Day.value))
     if(taskList.length !== 0){
-        localStorage.setItem('list', JSON.stringify(taskList))
+        localStorage.setItem('list_ToDoList_TheOdinProject', JSON.stringify(taskList))
     }
-    storedNames = JSON.parse(localStorage.getItem('list'));
+    storedNames = JSON.parse(localStorage.getItem('list_ToDoList_TheOdinProject'));
 
 }
 
